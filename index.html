@@ -4,9 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="fetchdata.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head> 
 <body>
-    <h1>Test</h1>    
+    <div class="container">
+        <div id="box">    
+            <div class="searchContainer">
+                <input type="text" class="Input-text" name="city" id="city" placeholder="City Name" list="cityname">
+                    <datalist id="cityname"></datalist>  
+                <input type="button"  class="button"  id="submitWeather" value="Search City" onclick="getData()">
+            </div>
+            
+            <div id="weatherContainer">
+                <div id="weatherDescription">
+                    <h1 id="cityHeader"></h1>
+                    <div id="weatherMain">
+                        <div id="temperature"></div>
+                        <div id="weatherDescriptionHeader"></div>
+                        <div><img id="documentIconImg" ></div>
+                    </div>
+                    <hr>
+                    <div class="flex-container">
+                            <div class="borderProp">
+                                <p id="day1day"></p>
+                                <img id="day1" src="" style="height: 40px;width: 40px;">
+                                <p id="minmaxDiv1"></p>
+                            </div>
+                            <div class="borderProp">
+                                <p id="day2day"></p>
+                                <img id="day2" src="" style="height: 40px;width: 40px;">
+                                <p id="minmaxDiv2"></p>
+                            </div>
+                            <div class="borderProp">
+                                <p id="day3day"></p>
+                                <img id="day3" src="" style="height: 40px;width: 40px;">
+                                <p id="minmaxDiv3"></p>    
+                            </div>  
+                            <div class="borderProp">
+                                <p id="day4day"></p>
+                                <img id="day4" src="" style="height: 40px;width: 40px;">
+                                <p id="minmaxDiv4"></p>
+                            </div>
+                            <div>
+                                <p id="day5day"></p>
+                                <img id="day5" src="" style="height: 40px;width: 40px;">
+                                <p id="minmaxDiv5"></p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-container">
+                    <canvas id="canvas" class="chartjs-render-monitor"></canvas>
+                </div>
+            
+        </div>
+    </div>
+    </script>
 </body>
-</html>
+</html> 
